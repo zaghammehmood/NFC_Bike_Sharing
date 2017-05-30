@@ -1,0 +1,22 @@
+<div class="map-container" >
+
+    <div class="col-lg-6 form-group">
+        <label for="name">Station name</label>
+        <ui-select id="name" ng-model="queryInfo.selectedStation">
+            <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match>
+            <ui-select-choices repeat="station in stations.stationsInfo | filter: $select.search track by station.name">
+                {{station.name}}
+            </ui-select-choices>
+        </ui-select>
+    </div>
+    <div class="col-lg-4 form-group">
+        <label for="distance">Distance</label>
+        <input class="form-control" id="distance" ng-model="queryInfo.distance" type="text">
+    </div>
+    <div class="col-lg-2 form-group">
+        <button ng-click="updateMap()" class="btn btn-primary" id="update-view">Update</button>
+    </div>
+
+    <div class="col-lg-12" style="height: 300px" id="map_canvas"></div>
+</div>
+
