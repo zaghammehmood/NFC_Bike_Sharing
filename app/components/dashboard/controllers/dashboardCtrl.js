@@ -29,18 +29,5 @@
                 zoom: 8
             };
 
-            //var stations = {};
-            //
-            //rest.getStationInfo().then(function(response){
-            //    stations.stationInfo = response.data.stations;
-            //    return rest.getStationsStatus();
-            //}).then(function(response){
-            //    stations.stationStatus = _.keyBy(response.data.stations, function(obj){
-            //        return obj.station_id;
-            //    });
-            //    $scope.makeMarkers(stations.stationInfo);
-            //});
-
-
         });
 })();

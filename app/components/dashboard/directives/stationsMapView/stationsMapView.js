@@ -30,7 +30,7 @@
                 scope.updateMap = function(){
                     var lat = scope.queryInfo.selectedStation.lat;
                     var lng = scope.queryInfo.selectedStation.lon;
-                    var qDistance = scope.queryInfo.distance;
+                    var qDistance = parseInt(scope.queryInfo.distance);
                     var centerPoint = new google.maps.LatLng(lat, lng);
 
                     for (var i = 0; i < markers.length; i++) {
