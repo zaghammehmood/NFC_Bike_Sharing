@@ -40,11 +40,20 @@
                     }
                 };
 
+                /**
+                 * Calculate the distance between two points
+                 *
+                 * @param pointA
+                 * @param pointB
+                 * @returns {string}
+                 */
+
                 function calculateDistance(pointA, pointB){
                     return (google.maps.geometry.spherical.computeDistanceBetween(pointA, pointB)/ 1000).toFixed(2);
                 };
 
                 /**
+                 * Render the map and Add the markers for the all bike station
                  *
                  * @param stationsStaticInfo
                  * @param stationsStatus

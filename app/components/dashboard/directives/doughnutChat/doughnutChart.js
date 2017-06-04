@@ -20,6 +20,11 @@
 
                 plotGlobalView(stationsStaticInfo, stationsStatus);
 
+                /**
+                 * Find the bike being used and bike available
+                 * @param stationsStaticInfo
+                 * @param stationsStatus
+                 */
                 function plotGlobalView(stationsStaticInfo, stationsStatus){
                     var total_available = 0;
                     var total_beingUsed = 0;
@@ -36,6 +41,11 @@
                 };
 
 
+                /**
+                 * Plot the graph for individual station for bike being used and bike available
+                 *
+                 * @param model Particular bike station model
+                 */
                 scope.plotIndividualView = function(model){
                     var data = [];
                     var capacity = model.capacity;
@@ -48,13 +58,15 @@
                 scope.plotIndividualView(stationsStaticInfo[0]);
 
                 /**
-                 * Put data into actual chart.
-                 * @param data
+                 * Plot the chat for given data on the given element
+                 *
+                 * @param chartData Data to display in the graph
+                 * @param element Dom element to display the
                  */
                 function plot(chartData, element) {
                     var doughnutOptions = {};
                     var ctx = element.getContext("2d");
-                    //ctx.clearRect(0, 0, ctx.width, ctx.height);
+                    ctx.clearRect(0, 0, element.width, element.height);  // clear canvas view before adding the new
                     var data = {
                         type: 'doughnut',
                         data:  {
