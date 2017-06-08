@@ -10,7 +10,7 @@
                 scope: {
                     stations: '=stations'
                 },
-                templateUrl: "/components/dashboard/directives/doughnutChat/template.html",
+                templateUrl: "/components/dashboard/directives/doughnut-chart/template.html",
                 link: DoughnutChartLink
             };
             function DoughnutChartLink(scope, elem){

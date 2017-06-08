@@ -11,7 +11,7 @@
                     map: "=",
                     stations: "="
                 },
-                templateUrl: "/components/dashboard/directives/stationsMapView/template.html",
+                templateUrl: "/components/dashboard/directives/stations-map-view/template.html",
                 link: mapLink
             };
             function mapLink(scope, elem, attr){
