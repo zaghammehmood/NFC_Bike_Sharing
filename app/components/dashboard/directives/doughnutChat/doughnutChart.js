@@ -37,7 +37,7 @@
                     }
                     data.push(total_available);
                     data.push(total_beingUsed);
-                    plot(data, document.getElementById("doughnut-global"));
+                    plot(data, 'Global', document.getElementById("doughnut-global"));
                 };
 
 
@@ -53,7 +53,7 @@
 
                     data.push(available);
                     data.push(capacity - available);
-                    plot(data, document.getElementById("doughnut-individual"));
+                    plot(data, 'Individual Station', document.getElementById("doughnut-individual"));
                 };
                 scope.plotIndividualView(stationsStaticInfo[0]);
 
@@ -63,8 +63,28 @@
                  * @param chartData Data to display in the graph
                  * @param element Dom element to display the
                  */
-                function plot(chartData, element) {
-                    var doughnutOptions = {};
+                function plot(chartData, title, element) {
+                    var doughnutOptions = {
+                            layout: {
+                                padding: {
+                                    left: 20,
+                                    right: 20,
+                                    top: 20,
+                                    bottom: 20
+                                }
+                            },
+                        title: {
+                            display: true,
+                            text: title+ " Bike Usage",
+                            position: 'top'
+                        },
+                        legend:{
+                            position: 'right',
+                            labels: {
+                                usePointStyle: true
+                            }
+                        }
+                    };
                     var ctx = element.getContext("2d");
                     ctx.clearRect(0, 0, element.width, element.height);  // clear canvas view before adding the new
                     var data = {
@@ -80,7 +100,7 @@
                                 ],
                                 borderColor: [
                                     'rgba(54, 162, 235, 1)',
-                                    'rgba(255,99,132,1)',
+                                    'rgba(255,99,132,1)'
                                 ],
                                 borderWidth: 1
                             }]},
